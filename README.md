@@ -9,9 +9,15 @@ Follow these steps to set up KGUARD on your local machine:
 1. **Clone the repository:**
    git clone https://github.com/Cero0212/KGUARD.git
 
-2. cd KGUARD
+2. install python3-venv
 
-3. chmod +x scripts/install.sh
+3. cd KGUARD/KGUARD
+
+4. python3 -m venv venv
+
+5. source venv/bin/activate 
+
+6. chmod +x scripts/install.sh
 
 4. cd scripts
 
