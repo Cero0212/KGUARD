@@ -1,0 +1,4 @@
+{
+  "scan_timeout": 300,
+  "max_concurrent": 3
+}

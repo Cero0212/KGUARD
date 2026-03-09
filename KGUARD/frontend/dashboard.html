@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - KGUARD</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Dashboard</h1>
+        
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>Total Escaneos</h3>
+                <p class="metric-value" id="totalScans">0</p>
+            </div>
+            <div class="metric-card critical">
+                <h3>Críticos</h3>
+                <p class="metric-value" id="criticalFindings">0</p>
+            </div>
+            <div class="metric-card high">
+                <h3>Altos</h3>
+                <p class="metric-value" id="highFindings">0</p>
+            </div>
+            <div class="metric-card medium">
+                <h3>Medios</h3>
+                <p class="metric-value" id="mediumFindings">0</p>
+            </div>
+            <div class="metric-card low">
+                <h3>Bajos</h3>
+                <p class="metric-value" id="lowFindings">0</p>
+            </div>
+            <div class="metric-card">
+                <h3>Info</h3>
+                <p class="metric-value" id="infoFindings">0</p>
+            </div>
+        </div>
+        
+        <div class="recent-scans">
+            <h2>Escaneos Recientes</h2>
+            <table id="recentScansTable">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Objetivo</th>
+                        <th>Tipo</th>
+                        <th>Hallazgos</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="recentScansBody">
+                    <!-- Datos dinámicos -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="dashboard-actions">
+            <button id="clearHistoryBtn" class="btn btn-warning">Limpiar Historial</button>
+            <button id="updateThreatsBtn" class="btn btn-info">Actualizar Base de Amenazas</button>
+        </div>
+    </div>
+    
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

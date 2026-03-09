@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nuevo Escaneo - KGUARD</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="scan-page">
+        <h1>Nuevo Escaneo</h1>
+        
+        <div class="scan-form">
+            <div class="form-group">
+                <label>Tipo de Objetivo:</label>
+                <select id="targetType">
+                    <option value="ip">Dirección IP</option>
+                    <option value="domain">Dominio</option>
+                    <option value="url">URL</option>
+                    <option value="network">Red (CIDR)</option>
+                    <option value="file">Archivo</option>
+                </select>
+                <span class="help-icon" title="IP: 192.168.1.1, Dominio: ejemplo.com, URL: https://ejemplo.com, Red: 192.168.1.0/24, Archivo: ruta/al/archivo">?</span>
+            </div>
+            
+            <div class="form-group">
+                <label>Objetivo:</label>
+                <input type="text" id="target" placeholder="ej: 192.168.1.1">
+            </div>
+            
+            <div class="form-group">
+                <label>Módulos de Análisis:</label>
+                <div class="modules-list" id="modulesList">
+                    <!-- Cargado dinámicamente -->
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Opciones Avanzadas:</label>
+                <div class="advanced-options">
+                    <label>
+                        <input type="checkbox" id="useAI" checked> Usar IA para clasificación
+                    </label>
+                    <label>
+                        <input type="checkbox" id="deepScan"> Escaneo profundo (más lento)
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button id="startScanBtn" class="btn btn-primary">Iniciar Escaneo</button>
+            </div>
+        </div>
+        
+        <div class="scan-progress" id="scanProgress" style="display: none;">
+            <h3>Escaneo en progreso</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+            <p id="progressStatus">Iniciando...</p>
+        </div>
+    </div>
+    
+    <script src="js/scan.js"></script>
+</body>
+</html>

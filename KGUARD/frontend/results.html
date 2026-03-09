@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados - KGUARD</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="results-page">
+        <h1>Resultados de Escaneos</h1>
+        
+        <div class="results-filters">
+            <input type="text" id="searchResults" placeholder="Buscar...">
+            <select id="severityFilter">
+                <option value="all">Todas las severidades</option>
+                <option value="critical">Críticas</option>
+                <option value="high">Altas</option>
+                <option value="medium">Medias</option>
+                <option value="low">Bajas</option>
+                <option value="info">Info</option>
+            </select>
+            <button id="exportAllBtn" class="btn btn-secondary">Exportar Todo</button>
+        </div>
+        
+        <div class="scans-list" id="scansList">
+            <!-- Lista de escaneos -->
+        </div>
+        
+        <div class="scan-detail" id="scanDetail" style="display: none;">
+            <h2 id="detailTitle">Detalles del Escaneo</h2>
+            <div id="findingsList"></div>
+            <div class="detail-actions">
+                <button id="exportJsonBtn" class="btn">Exportar JSON</button>
+                <button id="exportHtmlBtn" class="btn">Exportar HTML</button>
+                <button id="exportPdfBtn" class="btn">Exportar PDF</button>
+                <button id="deleteScanBtn" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/results.js"></script>
+</body>
+</html>
