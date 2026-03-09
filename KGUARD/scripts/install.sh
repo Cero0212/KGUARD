@@ -1,16 +1,26 @@
 #!/bin/bash
 
-echo "Instalando KGUARD..."
+echo "Iniciando instalación de KGUARD..."
 
-# Crear estructura de directorios
+# 1. Crear estructura de directorios
 mkdir -p ../scans
 mkdir -p ../data/cache
 mkdir -p ../logs
 
-# Instalar dependencias de Python
+# 2. Crear entorno virtual (aislado del sistema)
+echo "Creando entorno virtual..."
+python3 -m venv venv
+
+# 3. Activar el entorno
+source venv/bin/activate
+
+# 4. Instalar dependencias dentro del entorno
+echo "Instalando dependencias..."
+pip install --upgrade pip
 pip install -r ../backend/requirements.txt
 
-# Crear base de datos inicial
+# 5. Crear base de datos inicial
+echo "Configurando base de datos..."
 python -c "
 import sqlite3
 conn = sqlite3.connect('../data/threats.db')
@@ -22,5 +32,6 @@ conn.commit()
 conn.close()
 "
 
-echo "Instalación completada."
-echo "Para iniciar: python ../backend/app.py"
+echo "------------------------------------------"
+echo "Instalación completada correctamente."
+echo "Para iniciar la app, usa: ./start.sh"
