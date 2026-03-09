@@ -8,7 +8,7 @@ mkdir -p ../data/cache
 mkdir -p ../logs
 
 # Instalar dependencias de Python
-pip install -r ../backend/requirements.txt
+pip install -r ../backend/requirement.txt
 
 # Crear base de datos inicial
 python -c "
