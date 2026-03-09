@@ -17,7 +17,7 @@ Follow these steps to set up KGUARD on your local machine:
 
 5. source venv/bin/activate 
 
-6. chmod +x scripts/install.sh
+6. chmod +x scripts/install.sh scripts/start.sh  
 
 4. cd scripts
 
