@@ -227,18 +227,18 @@ class ThreatIntelUpdater:
         from database.db_manager import DatabaseManager
         self.db = DatabaseManager()
 
-    def update_all(self) -> Dict:
+    def update_all(self) -> dict:
         results = {}
         results['signatures'] = self._seed_builtin_signatures()
         results['cves'] = self._fetch_cves()
         return results
 
-    def _seed_builtin_signatures(self) -> Dict:
+    def _seed_builtin_signatures(self) -> dict:
         all_sigs = BUILTIN_WEB_SIGNATURES + BUILTIN_NETWORK_SIGNATURES + BUILTIN_SYSTEM_SIGNATURES
         self.db.save_vuln_signatures(all_sigs)
         return {'success': True, 'count': len(all_sigs), 'message': f'Loaded {len(all_sigs)} vulnerability signatures'}
 
-    def _fetch_cves(self) -> Dict:
+    def _fetch_cves(self) -> dict:
         try:
             r = requests.get(self.CVE_API, timeout=15)
             if r.status_code == 200:
