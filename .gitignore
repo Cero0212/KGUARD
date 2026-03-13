@@ -1,14 +1,33 @@
-*.tar
-*.tar.*
-*.jar
+# archivos compilados
 *.exe
-*.msi
-*.deb
-*.zip
-*.tgz
-*.log
-*.log.*
-*.sig
+*.dll
+*.so
+*.out
 
-pkg/
-src/
+# archivos comprimidos
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# logs
+*.log
+
+# archivos de sistema
+.DS_Store
+Thumbs.db
+
+# dependencias
+node_modules/
+
+# variables sensibles
+.env
+.env.local
+
+# llaves privadas
+*.pem
+*.key
+
+# build
+dist/
+build/
